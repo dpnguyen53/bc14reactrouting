@@ -72,3 +72,8 @@ npm install react-router-dom --save
     - ListMovie
 
 * Axios
+
+===== Buổi 10 ======
+* Redux thunk <=> redux saga
+* Detail Movie
+* Get Params From URL

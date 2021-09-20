@@ -2,48 +2,16 @@ import React, { Component } from "react";
 import axios from "axios";
 import Movie from "./Movie";
 import Loader from "./../../../components/Loader";
+import { actFetchListMovie } from "./modules/actions";
+import { connect } from "react-redux";
 
-export default class ListMoviePage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loading: false,
-      data: null,
-      error: null,
-    };
-  }
-
+class ListMoviePage extends Component {
   componentDidMount() {
-    //pending
-    this.setState({
-      loading: true,
-      data: null,
-      error: null,
-    });
-    axios({
-      url: "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP03",
-      method: "GET",
-    })
-      .then((result) => {
-        //success
-        this.setState({
-          loading: false,
-          data: result.data,
-          error: null,
-        });
-      })
-      .catch((error) => {
-        //error
-        this.setState({
-          loading: false,
-          data: null,
-          error,
-        });
-      });
+    this.props.fetchData();
   }
 
   renderListMovie = () => {
-    const { data, loading } = this.state;
+    const { data, loading } = this.props;
     if (loading) return <Loader />;
     return data?.map((movie) => {
       return <Movie key={movie.maPhim} movie={movie} />;
@@ -59,3 +27,20 @@ export default class ListMoviePage extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    loading: state.listMovieReducer.loading,
+    data: state.listMovieReducer.data,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchData: () => {
+      dispatch(actFetchListMovie());
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListMoviePage);

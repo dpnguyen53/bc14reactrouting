@@ -6,7 +6,7 @@ export default class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-md bg-dark navbar-dark">
         {/* Brand */}
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand" href="#s">
           Navbar
         </a>
         {/* Toggler/collapsibe Button */}

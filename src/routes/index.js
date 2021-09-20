@@ -1,6 +1,7 @@
 import ListMoviePage from "./../containers/HomeTemplate/ListMoviePage";
 import AboutPage from "./../containers/HomeTemplate/AboutPage";
 import HomePage from "./../containers/HomeTemplate/HomePage";
+import DetailPage from "./../containers/HomeTemplate/DetailMoviePage";
 import { Route } from "react-router-dom";
 
 const routesHome = [
@@ -18,6 +19,11 @@ const routesHome = [
     exact: false,
     path: "/list-movie",
     component: ListMoviePage,
+  },
+  {
+    exact: false,
+    path: "/detail/:id",
+    component: DetailPage,
   },
 ];
 const routesAdmin = [];
