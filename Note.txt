@@ -77,3 +77,11 @@ npm install react-router-dom --save
 * Redux thunk <=> redux saga
 * Detail Movie
 * Get Params From URL
+
+======== Buổi 11 ======
+* Routing (HomeTemplate & Admin Template)
+* HOC (Higher order component)
+    - Khai báo component theo dạng Stateless (function).
+    - return về 1 component (class/function)
+* Render Props (Adv): Tái sử dụng
+* Routing (Adv)

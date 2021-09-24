@@ -6,7 +6,7 @@ export const actFetchListMovie = () => {
   return (dispatch) => {
     dispatch(actListMovieRequest());
     axios({
-      url: "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP03",
+      url: "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP07",
       method: "GET",
     })
       .then((result) => {

@@ -23,44 +23,20 @@ export default class Navbar extends Component {
           <ul className="navbar-nav">
             <li className="nav-item">
               <NavLink
-                exact
                 activeClassName="active"
                 className="nav-link"
-                to="/"
+                to="/dashboard"
               >
-                Home
+                Dashboard
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
                 activeClassName="active"
                 className="nav-link"
-                to="/about"
+                to="/add-user"
               >
-                About
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                activeClassName="active"
-                className="nav-link"
-                to="/list-movie"
-              >
-                List Movie
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink activeClassName="active" className="nav-link" to="/hoc">
-                Hoc
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                activeClassName="active"
-                className="nav-link"
-                to="/render-props"
-              >
-                RenderProps
+                Add user
               </NavLink>
             </li>
           </ul>

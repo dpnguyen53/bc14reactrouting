@@ -4,15 +4,14 @@ import "./App.css";
 // import ListMoviePage from "./containers/HomeTemplate/ListMoviePage";
 import PageNotFound from "./containers/PageNotFound";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { renderRoutesHome } from "./routes";
-import Navbar from "./containers/HomeTemplate/_component/Navbar";
+import { renderRoutesHome, renderRoutesAdmin } from "./routes";
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
       <Switch>
         {renderRoutesHome()}
+        {renderRoutesAdmin()}
 
         {/* Trang chu - localhost:3000 */}
         {/* <Route exact path="/" component={HomePage} /> */}

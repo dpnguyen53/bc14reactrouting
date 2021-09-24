@@ -2,7 +2,12 @@ import ListMoviePage from "./../containers/HomeTemplate/ListMoviePage";
 import AboutPage from "./../containers/HomeTemplate/AboutPage";
 import HomePage from "./../containers/HomeTemplate/HomePage";
 import DetailPage from "./../containers/HomeTemplate/DetailMoviePage";
-import { Route } from "react-router-dom";
+import DashboarPage from "../containers/AdminTemplate/DashboardPage";
+import AddUserPage from "../containers/AdminTemplate/AddUserPage";
+import HomeTemplate from "../containers/HomeTemplate";
+import AdminTemplate from "../containers/AdminTemplate";
+import HocPage from "../containers/HomeTemplate/HocPage";
+import RenderProps from "../containers/HomeTemplate/RenderPropsPage";
 
 const routesHome = [
   {
@@ -25,20 +30,58 @@ const routesHome = [
     path: "/detail/:id",
     component: DetailPage,
   },
+  {
+    exact: false,
+    path: "/hoc",
+    component: HocPage,
+  },
+  {
+    exact: false,
+    path: "/render-props",
+    component: RenderProps,
+  },
 ];
-const routesAdmin = [];
+
+const routesAdmin = [
+  //localhost:3000/dashboard
+  {
+    exact: false,
+    path: "/dashboard",
+    component: DashboarPage,
+  },
+
+  //localhost:3000/add-user
+  {
+    exact: false,
+    path: "/add-user",
+    component: AddUserPage,
+  },
+];
 
 function renderRoutesHome() {
   return routesHome.map((route, index) => {
     return (
-      <Route
+      <HomeTemplate
         key={index}
         exact={route.exact}
         path={route.path}
-        component={route.component}
+        Component={route.component}
       />
     );
   });
 }
 
-export { renderRoutesHome };
+function renderRoutesAdmin() {
+  return routesAdmin.map((route, index) => {
+    return (
+      <AdminTemplate
+        key={index}
+        exact={route.exact}
+        path={route.path}
+        Component={route.component}
+      />
+    );
+  });
+}
+
+export { renderRoutesHome, renderRoutesAdmin };
