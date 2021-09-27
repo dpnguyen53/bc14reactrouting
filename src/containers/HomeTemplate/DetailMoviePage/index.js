@@ -36,7 +36,7 @@ class DetailPage extends Component {
         <h3>DetailPage</h3>
         <div className="row">
           <div className="col-md-6">
-            <img className="img-fluid" src={data && data.hinhAnh} />
+            <img className="img-fluid" src={data && data.hinhAnh} alt="" />
           </div>
           <div className="col-md-6">
             <table className="table">

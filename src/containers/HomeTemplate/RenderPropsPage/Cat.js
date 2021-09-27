@@ -6,6 +6,7 @@ export default function Cat(props) {
     <img
       src="/cat.jpeg"
       style={{ position: "absolute", left: mouse.x, top: mouse.y }}
+      alt=""
     />
   );
 }

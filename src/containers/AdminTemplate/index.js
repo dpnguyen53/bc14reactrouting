@@ -11,11 +11,15 @@ function LayoutAdmin(props) {
   );
 }
 
-export default function AdminTemplate(props) {
-  const { exact, path, Component } = props;
+export default function AdminTemplate({ Component, ...props }) {
   return (
-    <LayoutAdmin>
-      <Route exact={exact} path={path} component={Component} />
-    </LayoutAdmin>
+    <Route
+      {...props}
+      render={(propsRoute) => (
+        <LayoutAdmin>
+          <Component {...propsRoute} />
+        </LayoutAdmin>
+      )}
+    />
   );
 }

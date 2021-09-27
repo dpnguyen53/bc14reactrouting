@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import Movie from "./Movie";
 import Loader from "./../../../components/Loader";
 import { actFetchListMovie } from "./modules/actions";

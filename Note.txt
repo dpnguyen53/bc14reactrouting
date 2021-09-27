@@ -85,3 +85,6 @@ npm install react-router-dom --save
     - return về 1 component (class/function)
 * Render Props (Adv): Tái sử dụng
 * Routing (Adv)
+
+======== Buổi 12 ======
+* Hooks
