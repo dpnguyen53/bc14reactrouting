@@ -1,17 +1,15 @@
 import * as ActionType from "./constants";
-import axios from "axios";
+import api from "./../../../../utils/apiUtils";
 
 export const actFetchListMovie = () => {
   //Goi api trong nay
   return (dispatch) => {
     dispatch(actListMovieRequest());
-    axios({
-      url: "https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP07",
-      method: "GET",
-    })
+    api
+      .get("QuanLyPhim/LayDanhSachPhim?maNhom=GP03")
       .then((result) => {
         //success
-        dispatch(actListMovieSuccess(result.data));
+        dispatch(actListMovieSuccess(result.data.content));
       })
       .catch((error) => {
         //error

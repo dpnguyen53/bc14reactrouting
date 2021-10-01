@@ -88,3 +88,7 @@ npm install react-router-dom --save
 
 ======== Buổi 12 ======
 * Hooks
+
+======== Buổi 13 ======
+* Auth
+* Guard Routing Admin

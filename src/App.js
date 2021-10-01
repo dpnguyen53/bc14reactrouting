@@ -5,6 +5,7 @@ import "./App.css";
 import PageNotFound from "./containers/PageNotFound";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { renderRoutesHome, renderRoutesAdmin } from "./routes";
+import AuthPage from "./containers/AdminTemplate/AuthPage";
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
 
         {/* Trang list movie - localhost:3000/list-movie */}
         {/* <Route path="/list-movie" component={ListMoviePage} /> */}
+
+        <Route path="/auth" component={AuthPage} />
 
         {/* Trang k ton tai - de o cuoi cung */}
         <Route path="" component={PageNotFound} />

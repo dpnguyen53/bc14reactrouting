@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import Navbar from "./_components/Navbar";
 
 function LayoutAdmin(props) {
@@ -15,11 +15,18 @@ export default function AdminTemplate({ Component, ...props }) {
   return (
     <Route
       {...props}
-      render={(propsRoute) => (
-        <LayoutAdmin>
-          <Component {...propsRoute} />
-        </LayoutAdmin>
-      )}
+      render={(propsRoute) => {
+        if (localStorage.getItem("UserAdmin")) {
+          return (
+            <LayoutAdmin>
+              <Component {...propsRoute} />
+            </LayoutAdmin>
+          );
+        }
+
+        //redirect ve /auth
+        return <Redirect to="/auth" />;
+      }}
     />
   );
 }
