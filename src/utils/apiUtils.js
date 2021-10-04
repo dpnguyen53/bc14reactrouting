@@ -12,6 +12,9 @@ api.interceptors.request.use(
     config.headers = {
       ...config.headers,
       TokenCybersoft: TOKEN_CYBERSPFT,
+      Authorization: localStorage.getItem("UserAdmin")
+        ? "Bearer " + JSON.parse(localStorage.getItem("UserAdmin")).accessToken
+        : "",
     };
 
     return config;

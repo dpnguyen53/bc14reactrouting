@@ -9,6 +9,7 @@ import AdminTemplate from "../containers/AdminTemplate";
 import HocPage from "../containers/HomeTemplate/HocPage";
 import RenderProps from "../containers/HomeTemplate/RenderPropsPage";
 import HooksPage from "../containers/HomeTemplate/HooksPage";
+import MaterialPage from "../containers/HomeTemplate/MaterialPage";
 
 const routesHome = [
   {
@@ -45,6 +46,11 @@ const routesHome = [
     exact: false,
     path: "/hooks",
     component: HooksPage,
+  },
+  {
+    exact: false,
+    path: "/material",
+    component: MaterialPage,
   },
 ];
 
