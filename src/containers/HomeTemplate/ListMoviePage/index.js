@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Movie from "./Movie";
-import Loader from "./../../../components/Loader";
+import Loader from "components/Loader";
 import { actFetchListMovie } from "./modules/actions";
 import { connect } from "react-redux";
 

@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
+import { actLogout } from "./../../AuthPage/modules/actions";
+import { connect } from "react-redux";
 
-export default class Navbar extends Component {
+class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-md bg-dark navbar-dark">
@@ -39,9 +41,31 @@ export default class Navbar extends Component {
                 Add user
               </NavLink>
             </li>
+            <li className="nav-item">
+              <button
+                className="btn btn-info"
+                onClick={() => {
+                  this.props.logout(this.props.history);
+                }}
+              >
+                Logout
+              </button>
+            </li>
           </ul>
         </div>
       </nav>
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logout: (history) => {
+      dispatch(actLogout(history));
+    },
+  };
+};
+
+const ConnectedComponent = connect(null, mapDispatchToProps)(Navbar);
+
+export default withRouter(ConnectedComponent);

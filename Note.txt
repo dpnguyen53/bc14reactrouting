@@ -97,3 +97,18 @@ npm install react-router-dom --save
 * Add user(Token)
 * Material UI
 * Styledd Component
+
+======== Buổi 15 ======
+* Refactor code call api
+    - Flow login Auth
+        + dispatch actAuthSuccess
+        + timeout exp
+
+* Flow reload web (actTryLogin)
+        + timeout exp
+        + dispatch actAuthSuccess
+        
+* Logout
+    - remove accessToken
+    - redirect /auth
+    - clear reducer Auth
