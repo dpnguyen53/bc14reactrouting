@@ -1,56 +1,47 @@
-import ListMoviePage from "./../containers/HomeTemplate/ListMoviePage";
-import AboutPage from "./../containers/HomeTemplate/AboutPage";
-import HomePage from "./../containers/HomeTemplate/HomePage";
-import DetailPage from "./../containers/HomeTemplate/DetailMoviePage";
-import DashboarPage from "../containers/AdminTemplate/DashboardPage";
-import AddUserPage from "../containers/AdminTemplate/AddUserPage";
+import { lazy } from "react";
 import HomeTemplate from "../containers/HomeTemplate";
 import AdminTemplate from "../containers/AdminTemplate";
-import HocPage from "../containers/HomeTemplate/HocPage";
-import RenderProps from "../containers/HomeTemplate/RenderPropsPage";
-import HooksPage from "../containers/HomeTemplate/HooksPage";
-import MaterialPage from "../containers/HomeTemplate/MaterialPage";
 
 const routesHome = [
   {
     exact: true,
     path: "/",
-    component: HomePage,
+    component: lazy(() => import("containers/HomeTemplate/HomePage")),
   },
   {
     exact: false,
     path: "/about",
-    component: AboutPage,
+    component: lazy(() => import("containers/HomeTemplate/AboutPage")),
   },
   {
     exact: false,
     path: "/list-movie",
-    component: ListMoviePage,
+    component: lazy(() => import("containers/HomeTemplate/ListMoviePage")),
   },
   {
     exact: false,
     path: "/detail/:id",
-    component: DetailPage,
+    component: lazy(() => import("containers/HomeTemplate/DetailMoviePage")),
   },
   {
     exact: false,
     path: "/hoc",
-    component: HocPage,
+    component: lazy(() => import("containers/HomeTemplate/HocPage")),
   },
   {
     exact: false,
     path: "/render-props",
-    component: RenderProps,
+    component: lazy(() => import("containers/HomeTemplate/RenderPropsPage")),
   },
   {
     exact: false,
     path: "/hooks",
-    component: HooksPage,
+    component: lazy(() => import("containers/HomeTemplate/HooksPage")),
   },
   {
     exact: false,
     path: "/material",
-    component: MaterialPage,
+    component: lazy(() => import("containers/HomeTemplate/MaterialPage")),
   },
 ];
 
@@ -59,14 +50,14 @@ const routesAdmin = [
   {
     exact: false,
     path: "/dashboard",
-    component: DashboarPage,
+    component: lazy(() => import("containers/AdminTemplate/DashboardPage")),
   },
 
   //localhost:3000/add-user
   {
     exact: false,
     path: "/add-user",
-    component: AddUserPage,
+    component: lazy(() => import("containers/AdminTemplate/AddUserPage")),
   },
 ];
 

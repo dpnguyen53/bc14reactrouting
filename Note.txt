@@ -112,3 +112,13 @@ npm install react-router-dom --save
     - remove accessToken
     - redirect /auth
     - clear reducer Auth
+
+======== Buổi 16 ======
+* alias
+* Lazy load page
+* scss
+
+* Build
+    - Hosting (Server)
+    - Domain (abc.com)
+* Deploy app heroku

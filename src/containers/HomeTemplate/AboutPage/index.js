@@ -5,6 +5,7 @@ export default class AboutPage extends Component {
     return (
       <div>
         <h3>AboutPage</h3>
+        <button className="btn_test">Test</button>
       </div>
     );
   }
