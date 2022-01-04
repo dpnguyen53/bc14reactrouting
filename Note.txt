@@ -122,3 +122,42 @@ npm install react-router-dom --save
     - Hosting (Server)
     - Domain (abc.com)
 * Deploy app heroku
+
+
+
+=== demo closure js ===
+const increase = () => {
+    let x = 0;
+
+    const increaseInner = () => {
+        return ++x;
+    };
+
+    return increaseInner;
+};
+
+const useIncrease = increase();
+console.log(useIncrease());
+console.log(useIncrease());
+console.log(useIncrease());
+console.log(useIncrease());
+
+// ---------------------------
+const useState = (initVal) => {
+    let _val = initVal;
+
+    const state = () => _val;
+
+    const setState = (newVal) => {
+        _val = newVal;
+    };
+
+    return [state, setState];
+};
+
+const [state, setState] = useState(0);
+console.log(state());
+setState(1);
+console.log(state());
+setState(10);
+console.log(state());
