@@ -9,6 +9,7 @@ export default class HocPage extends Component {
   render() {
     return (
       <div>
+        {process.env.NODE_ENV}
         <h3>HocPage</h3>
         <WrapperCard />
       </div>
